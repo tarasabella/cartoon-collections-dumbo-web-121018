@@ -6,10 +6,12 @@ end
 def summon_captain_planet(planeteer_calls)
   planeteer_calls.map {|calls| calls.upcase + "!"}
 end
-def long_planeteer_calls(long_calls)
-  if long_calls.any? {|calls| calls.length >= 4
-    return true}
-  else false
+
+def long_planeteer_calls(planeteer_calls)
+  planeteer_calls.any? { |call| call.length > 4 }
+end
+
+long_planeteer_calls(planeteer_calls)
 end
 def find_the_cheese(foods)
   cheese = ["cheddar", "gouda", "camembert"]
